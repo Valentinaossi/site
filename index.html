@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLARIZA SRL | Leading General Freight & Logistics Argentina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS VARIABLES & RESET */
+        :root {
+            --primary-navy: #0a1d37;
+            --accent-orange: #ff6b35;
+            --soft-gray: #f4f7f6;
+            --white: #ffffff;
+            --text-main: #2d3436;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Work Sans', sans-serif; line-height: 1.6; color: var(--text-main); background: var(--white); }
+        h1, h2, h3 { font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 25px; }
+
+        /* 1. HERO SCREEN (CHASSIS OF THE BRAND) */
+        .hero { 
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            background: linear-gradient(rgba(10, 29, 55, 0.75), rgba(10, 29, 55, 0.75)), 
+                        url('https://images.unsplash.com/photo-1519003722824-192d992a605b?auto=format&fit=crop&q=80&w=2000') no-repeat center center/cover;
+            color: var(--white); 
+        }
+        .hero-inner { max-width: 900px; }
+        .hero h1 { font-size: clamp(3rem, 8vw, 6rem); line-height: 0.95; margin-bottom: 20px; }
+        .hero p { font-size: 1.25rem; font-weight: 300; letter-spacing: 2px; text-transform: uppercase; border-left: 4px solid var(--accent-orange); padding-left: 20px; }
+
+        /* SECTION HEADERS */
+        section { padding: 120px 0; }
+        .tagline { color: var(--accent-orange); font-weight: 700; font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; display: block; }
+        .section-title { font-size: 3rem; margin-bottom: 50px; color: var(--primary-navy); }
+
+        /* 2. ABOUT US (ENGINE OF THE COMPANY) */
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .about-text p { font-size: 1.1rem; color: #636e72; margin-bottom: 25px; }
+
+        /* 3. SERVICES (LOGISTICS CAPABILITIES) */
+        .services { background: var(--soft-gray); }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .service-card { padding: 50px; background: var(--white); border-bottom: 6px solid transparent; transition: var(--transition); box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
+        .service-card:hover { transform: translateY(-10px); border-color: var(--accent-orange); }
+        .service-card h3 { margin-bottom: 20px; font-size: 1.8rem; color: var(--primary-navy); }
+        .service-card p { color: #636e72; }
+
+        /* 4. STRATEGIC EDGE (WHY US) */
+        .edge-block { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .edge-item h3 { font-size: 1.4rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .edge-item h3::before { content: ""; width: 10px; height: 10px; background: var(--accent-orange); display: inline-block; }
+        .edge-item p { font-size: 0.95rem; color: #636e72; }
+
+        /* 5. OPERATIONAL FLOW (PROCESS) */
+        .process-flow { background: var(--primary-navy); color: var(--white); }
+        .flow-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px; }
+        .flow-step { position: relative; }
+        .step-count { font-family: 'Barlow Condensed'; font-size: 4rem; color: rgba(255,255,255,0.1); position: absolute; top: -30px; left: 0; }
+        .flow-step h3 { margin-bottom: 15px; position: relative; z-index: 1; }
+        .flow-step p { opacity: 0.7; font-weight: 300; }
+
+        /* 6. ENGAGEMENT (CONTACT FORM) */
+        .contact-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; }
+        .form-control { margin-bottom: 25px; }
+        .form-control label { display: block; font-weight: 600; font-size: 0.8rem; margin-bottom: 8px; color: var(--primary-navy); }
+        .form-control input, .form-control textarea { width: 100%; padding: 15px; border: 2px solid #dfe6e9; font-family: inherit; transition: var(--transition); }
+        .form-control input:focus { border-color: var(--accent-orange); outline: none; }
+        .submit-btn { padding: 20px 50px; background: var(--primary-navy); color: white; border: none; font-family: 'Barlow Condensed'; font-size: 1.2rem; cursor: pointer; transition: var(--transition); width: 100%; }
+        .submit-btn:hover { background: var(--accent-orange); }
+
+        /* 7. GLOBAL FOOTER (CONTACTS) */
+        footer { padding: 80px 0; background: #050d1a; color: #b2bec3; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 50px; }
+        .footer-logo h2 { color: var(--white); font-size: 2.5rem; margin-bottom: 10px; }
+        .footer-details p { margin-bottom: 12px; font-size: 1rem; }
+        .footer-details strong { color: var(--white); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+        .copyright { margin-top: 60px; text-align: center; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px; }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .about-content, .flow-grid, .edge-block, .contact-wrap, .footer-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <h1>Beyond Transport: Pure Velocity</h1>
+                <p>Clariza SRL: Argentina's Premier General Freight Trucking Network.</p>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <span class="tagline">Our Legacy</span>
+                    <h2 class="section-title">Logistics Mastery in Ciudad de Buenos Aires</h2>
+                    <p>Operating from the heart of Ciudad De Buenos Aires, Clariza SRL stands as a foundational pillar in the Argentine Transportation and Warehousing sector. We are more than a trucking firm; we are a strategic partner in the global supply chain.</p>
+                    <p>Our specialization in General Freight Trucking and Local Delivery without storage allows us to offer a hyper-efficient "Direct-to-Destination" model. We eliminate the friction of traditional warehousing, ensuring that your assets are always moving toward their next milestone.</p>
+                    <p>With a presence in the prestigious Pte. Marcelo Torcuato De Alvear district, Clariza SRL combines urban agility with heavy-duty regional reach to serve the most demanding industrial requirements in Argentina.</p>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1000" alt="Clariza Logistics" style="width:100%; box-shadow: -20px 20px 0 var(--accent-orange);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <span class="tagline">Core Competencies</span>
+            <h2 class="section-title">Tailored Haulage Solutions</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>General Freight Trucking</h3>
+                    <p>Standard and oversized cargo management across all major Argentine routes. We utilize a fleet optimized for durability and rapid transit times across interurban corridors.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Local Trucking (Non-Storage)</h3>
+                    <p>A specialized service focusing on immediate movement. We bypass traditional storage delays to deliver goods within the city limits with lightning-fast turnaround times.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Logistics Coordination</h3>
+                    <p>Part of our Freight Transportation Arrangement, we provide deep analytical route planning to ensure cost-effectiveness and safety for every shipment under our care.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <span class="tagline">The Advantage</span>
+            <h2 class="section-title">Defining Reliability</h2>
+            <div class="edge-block">
+                <div class="edge-item">
+                    <h3>Urban Command</h3>
+                    <p>Located at Alvear 987, our command center is perfectly positioned to coordinate complex urban logistics within Buenos Aires’ busiest commercial zones.</p>
+                </div>
+                <div class="edge-item">
+                    <h3>Frictionless Motion</h3>
+                    <p>By specializing in non-scheduled air and road transportation connections, we reduce the "idling time" of your cargo significantly.</p>
+                </div>
+                <div class="edge-item">
+                    <h3>Industry Integrity</h3>
+                    <p>We strictly adhere to Transportation and Warehousing sector standards, maintaining high performance in ESG industry averages for the region.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-flow">
+        <div class="container">
+            <span class="tagline" style="color: var(--accent-orange);">Roadmap</span>
+            <h2 class="section-title" style="color: white;">The Clariza Workflow</h2>
+            <div class="flow-grid">
+                <div class="flow-step">
+                    <div class="step-count">01</div>
+                    <h3>Intake & Auditing</h3>
+                    <p>We evaluate freight dimensions, safety requirements, and destination timelines to build a custom transit profile.</p>
+                </div>
+                <div class="flow-step">
+                    <div class="step-count">02</div>
+                    <h3>Dynamic Dispatch</h3>
+                    <p>Utilizing our "no-storage" model, cargo is loaded onto optimized routes immediately to maintain velocity.</p>
+                </div>
+                <div class="flow-step">
+                    <div class="step-count">03</div>
+                    <h3>Final Execution</h3>
+                    <p>Real-time delivery verification at the destination, ensuring the cargo arrived with the same integrity it started with.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="contact-wrap">
+                <div>
+                    <span class="tagline">Consultation</span>
+                    <h2 class="section-title">Request a Freight Quote</h2>
+                    <p>Connect with our Buenos Aires operations team today. Whether it's local interurban delivery or complex freight arrangement, Clariza SRL is ready to move.</p>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-control">
+                            <label>FULL NAME / ENTITY</label>
+                            <input type="text" placeholder="Your Name or Company">
+                        </div>
+                        <div class="form-control">
+                            <label>CORPORATE EMAIL</label>
+                            <input type="email" placeholder="email@clariza.pro">
+                        </div>
+                        <div class="form-control">
+                            <label>CARGO DETAILS</label>
+                            <textarea rows="4" placeholder="Volume, weight, and destination city..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Dispatch Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <h2>CLARIZA SRL</h2>
+                    <p>Excellence in Motion across Argentina.</p>
+                </div>
+                <div class="footer-details">
+                    <p><strong>HQ Address:</strong> Pte. Marcelo Torcuato De Alvear 987 Piso 8 Depto B, Ciudad De Buenos Aires, C1058AAM Argentina</p>
+                    <p><strong>Digital Inquiries:</strong> info@clariza.pro</p>
+                    <p><strong>Operations:</strong> info@clariza.pro</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 CLARIZA SRL. All rights reserved. Registered in Argentina.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
